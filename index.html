@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="一款简洁、好用的待办事项清单" />
+    <title>今日清单 · Todo List</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="todo-card" aria-labelledby="page-title">
+      <header class="hero">
+        <div>
+          <p class="eyebrow" id="today"></p>
+          <h1 id="page-title">今日清单</h1>
+          <p class="subtitle">把想做的事，一件件完成。</p>
+        </div>
+        <div class="progress" aria-live="polite">
+          <strong id="remaining-count">0</strong>
+          <span>项待完成</span>
+        </div>
+      </header>
+
+      <form class="add-form" id="todo-form">
+        <label class="sr-only" for="todo-input">添加新的待办事项</label>
+        <input
+          id="todo-input"
+          name="todo"
+          type="text"
+          placeholder="接下来要做什么？"
+          autocomplete="off"
+          maxlength="120"
+          required
+        />
+        <button type="submit" aria-label="添加待办事项">
+          <span aria-hidden="true">＋</span>
+          添加
+        </button>
+      </form>
+
+      <section class="list-section" aria-labelledby="list-title">
+        <div class="list-heading">
+          <h2 id="list-title">我的事项</h2>
+          <button class="clear-button" id="clear-completed" type="button">清除已完成</button>
+        </div>
+        <ul class="todo-list" id="todo-list"></ul>
+        <div class="empty-state" id="empty-state">
+          <div class="empty-icon" aria-hidden="true">✓</div>
+          <p>清单还是空的</p>
+          <span>添加一件想要完成的事吧</span>
+        </div>
+      </section>
+
+      <footer>每天进步一点点 ✦</footer>
+    </main>
+  </body>
+</html>
